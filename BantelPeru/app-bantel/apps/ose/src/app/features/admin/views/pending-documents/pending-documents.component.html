@@ -1,0 +1,163 @@
+<p-table #dt [value]="documents" [(selection)]="selectedDocuments" dataKey="id" styleClass="p-datatable-documents" [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [paginator]="true" currentPageReportTemplate="Se muestra {first} al {last} de {totalRecords} entradas"
+    [filterDelay]="0" [globalFilterFields]="['name','dateIssue', 'dateIssue','status']" [responsive]="true">
+    <ng-template pTemplate="caption">
+      <div class="table-header">
+        <!--<h2>Recibo de Servicios</h2>-->
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><h2>Recibo de Servicios</h2></td>
+            <td></td>
+            <td>
+              <table>
+                <tr *ngIf="debe == 0">
+                  <td align="center"><span class="salto_linea">{{ aviso }}</span></td>
+                </tr>
+                <tr *ngIf="debe == 1">
+                  <td align="center"><span class="salto_linea">{{ aviso }}</span></td>
+                </tr>
+                <tr *ngIf="debe == 2">
+                  <td align="center"><span class="salto_linea">{{ aviso }}</span></td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <table>
+                <tr *ngIf="debe == 0">
+                  <td align="center"><div class="debe0_conrelleno"></div><div class="aviso_tamanio">Al día<br />&nbsp;</div></td>
+                  <td align="center"><div class="debe1_sinrelleno"></div><div class="aviso_tamanio">Debe 1<br />mes</div></td>
+                  <td align="center"><div class="debe2_sinrelleno"></div><div class="aviso_tamanio">Debe 2 ó +<br />meses</div></td>
+                </tr>
+                <tr *ngIf="debe == 1">
+                  <td align="center"><div class="debe0_sinrelleno"></div><div class="aviso_tamanio"> Al día<br />&nbsp;</div></td>
+                  <td align="center"><div class="debe1_conrelleno"></div><div class="aviso_tamanio">Debe 1<br />mes</div></td>
+                  <td align="center"><div class="debe2_sinrelleno"></div><div class="aviso_tamanio">Debe 2 ó +<br />meses</div></td>
+                </tr>
+                <tr *ngIf="debe == 2">
+                  <td align="center"><div class="debe0_sinrelleno"></div><div class="aviso_tamanio">Al día<br />&nbsp;</div></td>
+                  <td align="center"><div class="debe1_sinrelleno"></div><div class="aviso_tamanio">Debe 1<br />mes</div></td>
+                  <td align="center"><div class="debe2_conrelleno"></div><div class="aviso_tamanio">Debe 2 ó +<br />meses</div></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="nroRecibo">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Nro. Recibo
+                    <p-sortIcon field="nroRecibo"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="servicioPlan">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Plan
+                    <p-sortIcon field="servicioPlan"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="periodo">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Período
+                    <p-sortIcon field="periodo"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="importe">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Importe
+                    <p-sortIcon field="importe"></p-sortIcon>
+                </div>
+            </th>
+            <!-- <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Recibo
+                </div>
+            </th> -->
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Estado
+                </div>
+            </th>
+            <th>
+              <div class="p-d-flex p-jc-between p-ai-center">
+                Impresión
+              </div>
+            </th>
+            <!--<th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Descarga
+                </div>
+            </th>-->
+            <!--<th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Impresión
+                </div>
+            </th>-->
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Como Pagar
+                </div>
+            </th>
+            <!--<th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                </div>
+            </th>-->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-document>
+        <tr class="p-selectable-row">
+            <td class="row-custom">
+                <span>{{document.NUM_DOCUMENTO}}</span>
+            </td>
+            <td class="row-custom">
+                <span>{{document.ITEM_DESCRIPCION}}</span>
+            </td>
+            <td class="row-custom">
+                <span>{{document.PERIODO}}</span>
+            </td>
+            <td class="row-custom">
+                <span>{{document.IMPORTE | number:'1.2-2'}}</span>
+            </td>
+            <!-- <td class="row-custom">
+                <span class="header-table"> Recibo</span>
+                <a href="{{document.bill_url}}" target="_blank">
+                    <i class="pi pi-file-pdf" style="font-size: 2rem"></i>
+                </a>
+            </td> -->
+            <td class="row-custom">
+              <span class="header-table" [ngClass]="{statusPendiente: document.ESTADO_LETRAS=='PENDIENTE',statusSuspendido: document.ESTADO_LETRAS=='SUSPENDIDO',statusExonerado: document.ESTADO_LETRAS=='EXONERADO',statusCanceldao: document.ESTADO_LETRAS=='CANCELADO'}">{{document.ESTADO_LETRAS }}</span>
+              <span class="header-table-none" [ngClass]="{statusPendiente: document.ESTADO_LETRAS=='PENDIENTE',statusSuspendido: document.ESTADO_LETRAS=='SUSPENDIDO',statusExonerado: document.ESTADO_LETRAS=='EXONERADO',statusCanceldao: document.ESTADO_LETRAS=='CANCELADO'}">{{document.ESTADO_LETRAS }}</span>
+            </td>
+            <td class="row-custom">
+              <span class="descargaRecibo" (click)="descargarPDF(document)">&nbsp;&nbsp;&nbsp;RECIBO&nbsp;&nbsp;&nbsp;</span>
+            </td>
+
+            <td class="row-custom">
+              <a href="https://www.youtube.com/watch?v=3CLjY2EIHAU" target="_blank">
+                <img src="../../../../../../assets/img/gallery/boton_bcp.png" height="50" class="p-mr-2">
+              </a >
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://www.youtube.com/watch?v=rZGjOml-wA8" target="_blank">
+                <img src="../../../../../../assets/img/gallery/boton_bbva.png" height="50" class="p-mr-2">
+              </a>
+            </td>
+            <!--<td class="row-custom">
+                <button pButton type="button" class="p-button-secondary" (click)="display()" label="Como Pagar"></button>
+            </td>-->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8">No se encontraron registros.</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<div id="pagos" class="modal banish">
+    <span (click)="closeModal()" class="close">&times;</span>
+    <img class="modal-content" src="../../../../../assets/img/gallery/pagos-info.png">
+</div>

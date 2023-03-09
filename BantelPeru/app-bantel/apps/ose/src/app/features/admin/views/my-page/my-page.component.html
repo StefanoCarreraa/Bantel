@@ -1,0 +1,63 @@
+<!-- <p-message severity="success" text="Message Content"></p-message> -->
+<p-messages></p-messages>
+
+
+<app-form-perfil [usuario]="usuario" [plan]="plan" (save)="userUpdate($event)"></app-form-perfil>
+<!-- <div class="e-mypage">
+    <div class="e-mypage-title">
+        <h2>Mi perfil</h2>
+    </div>
+    <div class="e-mypage-container">
+        <p-fieldset legend="Información" class="e-fieldset-information">
+            <div>
+                <form [formGroup]="uiform">
+                    <p>
+                        <strong> Nombre : </strong>
+                        <span>{{usuario?.nombres}}</span >
+                    </p>
+                    <p>
+                        <strong> Tipo de documento : </strong>
+                        <span>{{usuario?.tpdC_DESCRIPCION}}</span>
+                    </p>
+                    <p>
+                        <strong> Nro Documento : </strong>
+                        <span> {{usuario?.nrodocumento}}</span>
+                    </p>
+                    <p>
+                        <strong> Correo electrónico : </strong>
+                        <input type="text" pInputText placeholder="{{usuario?.email|lowercase}}" formControlName="email">
+                    </p>
+                    <p>
+                        <strong> Numero de Telefono: </strong>
+                        <input type="text" pInputText placeholder="{{usuario?.telefono}}" formControlName="telefono">
+                    </p>
+                    <h5>Cambiar contraseña</h5>
+                    <input pPassword type="password" formControlName="password" />
+                    <h5>Confirmar contraseña</h5>
+                    <input pPassword type="password" formControlName="password" />
+                    <br>
+                    <br>
+                    <button pButton type="button" class="p-button-info-bantel" (click)="userUpdate()">Guardar Cambios</button>
+
+                </form>
+            </div>
+
+        </p-fieldset>
+        <p-fieldset *ngFor="let perfile of plan" legend="Detalle del plan">
+            <p>
+                <strong> Plan : </strong>
+                <span>{{perfile.servicio}}</span>
+            </p>
+
+            <p>
+                <strong> Monto : </strong>
+                <span>{{perfile.importe | currency:'S/. '}}</span>
+            </p>
+
+            <p>
+                <strong> Inicio de facturación : </strong>
+                <span>{{perfile.fechA_INICIO_FACTURACION|date: 'fullDate':undefined:'es-PE'}}</span>
+            </p>
+        </p-fieldset>
+    </div>
+</div> -->

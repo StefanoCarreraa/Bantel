@@ -1,0 +1,94 @@
+:host {
+    ::ng-deep .e-homepage-slider {
+        .p-carousel{
+
+            &-header {
+                p {
+                    text-align: center;
+                }
+            }
+
+            &-container {
+            background-color: #10286F;
+            background-position: center center;
+            height: 545px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('https://bantelperu.com/wp-content/uploads/2020/12/Rectangle-120-sin-rendondeado-jpg.jpg');
+            }
+
+            &-item {
+                padding: 12px 20px;
+                width: 90%;
+            }
+        }
+
+        .plan-item {
+            &-content {
+                &-header {
+                    background-color: #FFED00;
+                    border-radius: 10px 10px 10px 10px;
+                    text-align: center;
+                    h2 {
+                        margin-bottom: 0px;
+                    }
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding-bottom: 19px;
+                    }
+                }
+        
+                &-box {
+                    padding: 20px;
+                    border-radius: 0px 0px 10px 10px;
+                    background-color: #ffff;
+                    height: 343px;
+                    &-price {
+                        display: block;
+                        text-align: center;
+                    }
+                    &-benefits {
+                        height: 180px;
+                    }
+                    &-buttons {
+                        text-align: center;
+                        &-request {
+                            button {
+                                width: 150px;
+                                padding: 8px 48px;
+                                width: 150px;
+                            }
+                            span {
+                                display: none;
+                            }
+                        }
+            
+                        &-more {
+                            button {
+                                width: 150px;
+                                border-radius: 2rem;
+                                width: 150px;
+                            }
+                            span {
+                                margin: 9px;
+                            }
+                        }
+                    }
+            
+                    li {
+                        list-style: none;
+                        ul {
+                            padding-left: 23px;
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+        
+                    }
+                }
+            }
+        }
+       
+    }
+}

@@ -1,0 +1,90 @@
+
+<div class="p-grid">
+  <div class="p-col">
+    <div class="box"></div>
+  </div>
+  <div class="p-col">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <div class="elemento-anterior forma-titulo">
+          <span>Solicita tu Plan Hogar y Condominio	</span>
+        </div>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Plan <span class="obligatorio">*</span></label>
+        <p-dropdown [options]="planes" [(ngModel)]="selectedPlan" [editable]="false" optionLabel="NombrePlan" placeholder="Seleccione" [disabled]=flagEnviar></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Nombres <span class="obligatorio">*</span></label>
+        <input id="nombres" type="text" pInputText [(ngModel)]="nombres" [readonly]=flagEnviar>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Apellidos <span class="obligatorio">*</span></label>
+        <input id="apellidos" type="text" pInputText [(ngModel)]="apellidos" [readonly]=flagEnviar>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label>Tipo doc. <span class="obligatorio">*</span></label>
+        <p-dropdown [options]="tiposDoc" [(ngModel)]="selectedTipoDoc" [editable]="false" optionLabel="NombreTipoDoc" placeholder="Seleccione" (onChange)="changedTipoDoc($event)" [disabled]=flagEnviar></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-md-8">
+        <label>Nro documento <span class="obligatorio">*</span></label>
+        <input id="nroDoc" type="text" pInputText [(ngModel)]="nroDoc" [readonly]=flagEnviar>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Email <span class="obligatorio">*</span></label>
+        <input id="email" type="text" pInputText [(ngModel)]="email" [readonly]=flagEnviar>
+      </div>
+      <div class="p-field p-col-12 p-md-3" *ngIf="flagCargar == 1">
+        <label><span class="cargar">Enviando solicitud...</span></label>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Teléfono/Celular <span class="obligatorio">*</span></label>
+        <input id="telefono" type="text" pInputText [(ngModel)]="telefono" [readonly]=flagEnviar>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label>Departamento <span class="obligatorio">*</span></label>
+        <p-dropdown [options]="departamentos" [(ngModel)]="selectedDepartamento" [editable]="false" optionLabel="DesDepartamento" placeholder="Seleccione" (onChange)="changedDepartamento($event)" [disabled]=flagEnviar></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label>Provincia <span class="obligatorio">*</span></label>
+        <p-dropdown [options]="provincias" [(ngModel)]="selectedProvincia" [editable]="false" optionLabel="DesProvincia" placeholder="Seleccione" (onChange)="changedProvincia($event)" [disabled]=flagEnviar></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label>Distrito <span class="obligatorio">*</span></label>
+        <p-dropdown [options]="distritos" [(ngModel)]="selectedDistrito" [editable]="false" optionLabel="DesDistrito" placeholder="Seleccione" [disabled]=flagEnviar></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Dirección <span class="obligatorio">*</span></label>
+        <input id="direccion" type="text" pInputText [(ngModel)]="direccion" [readonly]=flagEnviar>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Mensaje (opcional)</label>
+        <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" [(ngModel)]="mensajeDescripcion" placeholder="Ingresar mensaje" maxlength="200" [readonly]=flagEnviar></textarea>
+      </div>
+    </div>
+    <div class="p-field-checkbox p-col-12 p-md-12">
+      <p-checkbox name="terminos" value="" [(ngModel)]="terminos" inputId="terminos" binary="true" [disabled]=flagEnviar></p-checkbox>
+      <label for="terminos"><span>Acepto las</span> <button pButton type="button" label="políticas de privacidad" class="p-button-link sin-padding" (click)="privacidadPDF()"></button> <span>y</span> <button pButton type="button" label="términos y condiciones" class="p-button-link sin-padding" (click)="terminosCondicionesPDF()"></button></label>
+    </div>
+    <div class="p-field p-col-12 p-md-12">
+      <button pButton type="button" label="Enviar" (click)="Enviar()" [disabled]=flagEnviar></button>
+    </div>
+  </div>
+  <div class="p-col">
+
+  </div>
+</div>
+
+<p-dialog header="Mensaje" [(visible)]="addMensaje" [style]="{width: '500px'}" [closable]="true" [closeOnEscape]="false" (onHide)="hideMensaje()">
+  <p>
+    <i class="pi pi-check" style="font-size: 2rem; color: #4caf50; font-weight: bold"></i> &nbsp;&nbsp;&nbsp;
+    <span class="tamanio-letra-mensaje">{{ mensaje }}</span>
+  </p>
+  <ng-template pTemplate="footer">
+    <p-button (click)="hideMensaje()" label="Aceptar"></p-button>
+  </ng-template>
+</p-dialog>

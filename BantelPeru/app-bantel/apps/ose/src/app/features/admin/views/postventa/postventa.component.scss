@@ -1,0 +1,18 @@
+.sizes {
+    .p-inputtext {
+        display: block;
+        margin-bottom: .5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.p-field * {
+    display: block;
+}
+
+.tamanio-letra-mensaje {
+  font-size: 18px;
+  font-weight: 600;
+}

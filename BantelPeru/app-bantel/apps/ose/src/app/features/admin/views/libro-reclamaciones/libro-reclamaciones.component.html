@@ -1,0 +1,95 @@
+<p-messages></p-messages>
+<div class="p-grid">
+  <div class="p-col">
+    <div class="box"></div>
+  </div>
+  <div class="p-col">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <label>Nombre del Titular</label>
+        <input id="nombres" type="text" pInputText [(ngModel)]="nombres" readonly>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label>DNI/CE del Titular</label>
+        <input id="dni" type="text" pInputText [(ngModel)]="dni" readonly>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label>Email del Titular</label>
+        <input id="email" type="text" pInputText [(ngModel)]="email" readonly>
+      </div>
+
+      <!--<h3>Elegir Departamento</h3>-->
+      <!--<div class="p-field p-col-12 p-md-12">
+    <p-dropdown [options]="departamentos" [(ngModel)]="selectedDepartamento" [editable]="true" optionLabel="NombreDepartamento" placeholder="Seleccione"></p-dropdown>
+  </div>-->
+      <div class="p-field p-col-12 p-md-6">
+        <label>Departamento</label>
+        <input id="departamento" type="text" pInputText [(ngModel)]="departamento" readonly>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label>Teléfono o celular</label>
+        <input id="telefono" type="text" pInputText [(ngModel)]="telefono" readonly>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Dirección</label>
+        <input id="direccion" type="text" pInputText [(ngModel)]="direccion" readonly>
+      </div>
+      <div class="p-field-radioButton p-col-12 p-md-12">
+        <label>Tipo *</label>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+      </div>
+      <div *ngFor="let tipo of tipos" class="p-field-radioButton p-col-12 p-md-3">
+        <p-radioButton [inputId]="tipo.IDTipo" name="tipo" [value]="tipo" [(ngModel)]="selectedTipo" [disabled]=flagEnviar></p-radioButton>
+        <label [for]="tipo.IDTipo"> {{tipo.NombreTipo}}</label>
+      </div>
+      <div class="p-field p-col-12 p-md-3" *ngIf="flagCargar == 1">
+        <label><span class="cargar">Enviando solicitud...</span></label>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+      </div>
+      <label>Contrato *</label>
+      <div class="p-field p-col-12 p-md-12">
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <p-dropdown [options]="contratos" [(ngModel)]="selectedContrato" [editable]="false" optionLabel="NombreServicio" placeholder="Seleccione" [disabled]=flagEnviar></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <label>Escriba aquí el detalle de su reclamo/queja *</label>
+        <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" [(ngModel)]="reclamo" placeholder="Ingresar reclamo" maxlength="200" [readonly]=flagEnviar></textarea>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+        <!--<img [src]="url" height="200"> <br />-->
+        <input type='file' (change)="onSelectFile($event)" [(ngModel)]="nombreArchivo" [disabled]=flagEnviar>
+      </div>
+    </div>
+    <div class="p-field-checkbox p-col-12 p-md-12">
+      <p-checkbox name="terminos" value="" [(ngModel)]="terminos" inputId="terminos" binary="true" [disabled]=flagEnviar></p-checkbox>
+      <label for="terminos"><span>Acepto las</span> <button pButton type="button" label="políticas de privacidad" class="p-button-link sin-padding" (click)="privacidadPDF()"></button> <span>y</span> <button pButton type="button" label="términos y condiciones" class="p-button-link sin-padding" (click)="terminosCondicionesPDF()"></button></label>
+    </div>
+    <div class="p-field p-col-12 p-md-12">
+      <button pButton type="button" label="Enviar" (click)="Enviar()" [disabled]=flagEnviar></button>
+    </div>
+  </div>
+  <div class="p-col">
+
+  </div>
+</div>
+
+<p-dialog header="Mensaje" [(visible)]="addMensaje" [style]="{width: '500px'}" [closable]="true" [closeOnEscape]="false" (onHide)="hideMensaje()">
+  <p *ngIf="flag == 1">
+    <i class="pi pi-check" style="font-size: 2rem; color: #4caf50; font-weight: bold"></i> &nbsp;&nbsp;&nbsp;
+    <span class="tamanio-letra-mensaje">{{ mensaje }}</span>
+  </p>
+  <p *ngIf="flag == 2">
+    <i class="pi pi-info" style="font-size: 2rem; color: #2196f3; font-weight: bold"></i> &nbsp;&nbsp;&nbsp;
+    <span class="tamanio-letra-mensaje">{{ mensaje }}</span>
+  </p>
+  <p *ngIf="flag == 3">
+    <i class="pi pi-times" style="font-size: 2rem; color: #f2070f; font-weight: bold"></i> &nbsp;&nbsp;&nbsp;
+    <span class="tamanio-letra-mensaje">{{ mensaje }}</span>
+  </p>
+  <ng-template pTemplate="footer">
+    <p-button (click)="hideMensaje()" label="Aceptar"></p-button>
+  </ng-template>
+</p-dialog>

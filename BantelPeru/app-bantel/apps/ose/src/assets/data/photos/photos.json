@@ -1,0 +1,13 @@
+{
+    "data": [{
+            "previewImageSrc": "assets/img/gallery/Plan-200-Gamer-min.jpg",
+            "alt": "Experimenta una velocidad distinta de internet",
+            "title": "Experimenta una velocidad distinta de internet"
+        },
+        {
+            "previewImageSrc": "assets/img/gallery/Plan-500-Gamer.jpg",
+            "alt": "Realiza tus pagos desde donde estés",
+            "title": "Realiza tus pagos desde donde estés"
+        }
+    ]
+}

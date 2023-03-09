@@ -1,0 +1,39 @@
+<!--<h5>Hi I am Component Dialog following Foo list:</h5>
+<ul *ngIf="mydata">
+  <li *ngFor="let item of mydata">{{item}}</li>
+</ul>
+<button mat-button (click)="closeDialog()">Close</button>-->
+
+<div>
+  <div mat-dialog-content>
+    <div class="contenido">
+      <h2 mat-dialog-title>
+        Por favor escriba su correo electrónico
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-icon-button color="primary" (click)="cerrar()"><mat-icon>clear</mat-icon></button>
+      </h2>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Ingresar correo electrónico</mat-label>
+        <input matInput type="email" [(ngModel)]="mydata.correo" pattern="^[a-zA-Z0-9.!#$%&' * +/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" required maxlength="80">
+        <mat-hint>ejemplo: nombre@gmail.com</mat-hint>
+      </mat-form-field>
+      <br />
+      <button mat-flat-button color="primary" (click)="enviar()">Enviar</button>
+      <!--<button mat-button (click)="closeDialog()">Close</button>-->
+    </div>
+
+  </div>
+</div>
+
+<!--<ng-template #dialogRef2>
+  <div mat-dialog-content>
+    <div class="contenido">
+      <h2 mat-dialog-title>
+        {{mensaje}}
+        <button mat-button mat-dialog-close="Cerrando mensaje...">Close</button>
+      </h2>
+      <br />
+    </div>
+  </div>
+</ng-template>-->

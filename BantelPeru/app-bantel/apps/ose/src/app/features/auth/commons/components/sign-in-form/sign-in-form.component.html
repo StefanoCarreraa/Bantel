@@ -1,0 +1,69 @@
+<div class="b-login">
+    <div class="b-login-bg">
+
+    </div>
+    <div class="b-login-bg-movil">
+
+    </div>
+    <div class="b-login-logo">
+        <div class="b-login-logo-content">
+        </div>
+    </div>
+    <div class="b-login-header">
+        <div class="b-login-header-content">
+            <h1>Bienvenidos al portal de clientes de Bantel!</h1>
+            <h1>Por favor ingrese su DNI y clave</h1>
+        </div>
+    </div>
+    <div class="b-login-card">
+        <div class="b-login-card-logo">
+            <img src="../../../../../../assets/img/logo/Logo-bannet.png">
+        </div>
+        <div class="b-login-card-content">
+          <form class="b-login-card-content--form" [formGroup]="signInForm" (ngSubmit)="sendData()">
+            <div class="p-fluid content-from">
+              <div class="p-field field-label">
+                <label for="user_name">DNI Por Favor</label>
+                <input id="user_name" formControlName="usuario" type="text" pInputText>
+                <p *ngIf="usuarioError">{{ usuarioError }}</p>
+              </div>
+              <div class="p-field field-label">
+                <label for="user_password">Contraseña</label>
+                <input [type]="button.type" id="user_password" formControlName="password" pInputText>
+                <ose-button-visibily-password class="loginbtn" #button></ose-button-visibily-password>
+              </div>
+            </div>
+            <div class="p-field form-check">
+              <input class="form-check-input" type="checkbox" value="" id="confirmation">
+              <label class="form-check-label" for="confirmation">
+                Recordarme
+              </label>
+            </div>
+            <div class="p-fluid p-grid b-login-card-content--form--button-group centered">
+              <!--  <button pButton type="button" label="Registrarse"></button>  -->
+              <button pButton label="INGRESAR" [disabled]="signInForm.invalid"></button>
+            </div>
+          </form>
+            <!--<div class="p-fluid p-grid b-login-card-content--form--button-group centered">
+              <button pButton label="ACTIVA TU CUENTA" (click)="openEnviar()"></button>
+            </div>-->
+
+          <!--<button mat-button (click)="openCompDialog()">Open Comp Modal</button>-->
+          <!--<button mat-button (click)="openTempDialog()">Open Temp Modal</button>-->
+
+          <!--<ng-template #dialogRef let-mydata>
+            <h5>Hi I am Template Dialog following Foo list:</h5>
+            <ul *ngIf="mydata">
+              <li *ngFor="let item of mydata">{{item}}</li>
+            </ul>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Ingrese correo">
+            </mat-form-field>
+            <br /><br />
+            <button mat-button mat-dialog-close="I am from dialog land...">Close</button>
+          </ng-template>-->
+
+        </div>
+    </div>
+
+</div>

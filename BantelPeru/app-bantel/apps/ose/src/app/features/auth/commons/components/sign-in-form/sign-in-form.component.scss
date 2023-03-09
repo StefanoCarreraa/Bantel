@@ -1,0 +1,220 @@
+                                                                                                 :host {
+                                                                                                    display: block;
+                                                                                                    max-width: 300px;
+                                                                                                    .b-login {
+                                                                                                        .p-field {
+                                                                                                            margin: auto;
+                                                                                                        }
+                                                                                                        &-bg {
+                                                                                                            width: 100%;
+                                                                                                            left: 0;
+                                                                                                            top: 0;
+                                                                                                            height: 100%;
+                                                                                                            position: absolute;
+                                                                                                            z-index: -1;
+                                                                                                            background-image: url("../../../../../../assets/img/logo/background-desktop.jpg");
+                                                                                                            background-position: center;
+                                                                                                            background-repeat: no-repeat;
+                                                                                                            background-size: cover;
+                                                                                                        }
+                                                                                                        &-logo {
+                                                                                                            left: 16px;
+                                                                                                            bottom: 46px;
+                                                                                                            position: absolute;
+                                                                                                            z-index: -1;
+                                                                                                            background-image: url("../../../../../../assets/img/logo/logo-BANTEL-1.png");
+                                                                                                            background-position: center;
+                                                                                                            background-repeat: no-repeat;
+                                                                                                            background-size: cover;
+                                                                                                        }
+                                                                                                        &-header {
+                                                                                                            text-align: center;
+                                                                                                            width: max-content;
+                                                                                                            h1 {
+                                                                                                                margin-left: -52px;
+                                                                                                                color: white;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        &-card {
+                                                                                                            border: 1px solid transparent;
+                                                                                                            border-radius: 35px !important;
+                                                                                                            &-logo {
+                                                                                                                display: flex;
+                                                                                                                width: 100%;
+                                                                                                                img {
+                                                                                                                    margin: auto;
+                                                                                                                }
+                                                                                                            }
+                                                                                                            .field-label {
+                                                                                                                width: 200px;
+                                                                                                            }
+                                                                                                            &-content {
+                                                                                                                text-align: center;
+                                                                                                                &--form {
+                                                                                                                    label {
+                                                                                                                        color: white;
+                                                                                                                        left: 5.1rem;
+                                                                                                                        font-size: 15px;
+                                                                                                                    }
+                                                                                                                    span {
+                                                                                                                        color: rgb(22, 66, 145) !important;
+                                                                                                                    }
+                                                                                                                    &--input-group {
+                                                                                                                        div:nth-child(1) {
+                                                                                                                            margin: 10px auto;
+                                                                                                                        }
+                                                                                                                        &-psw {
+                                                                                                                            span {
+                                                                                                                                display: flex;
+                                                                                                                            }
+                                                                                                                            .loginbtn {
+                                                                                                                                position: relative !important;
+                                                                                                                                top: 38px;
+                                                                                                                                left: 100px;
+                                                                                                                            }
+                                                                                                                            ose-button-visibily-password {
+                                                                                                                                button.mat-icon-button {
+                                                                                                                                    padding: 0;
+                                                                                                                                    min-width: 0;
+                                                                                                                                    width: 0;
+                                                                                                                                    height: 0;
+                                                                                                                                    flex-shrink: 0;
+                                                                                                                                    line-height: 0;
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                    &--button-group {
+                                                                                                                        margin: 10px auto;
+                                                                                                                        text-align: center;
+                                                                                                                        justify-content: center;
+                                                                                                                        button {
+                                                                                                                            color: rgb(22, 66, 145) !important;
+                                                                                                                            ;
+                                                                                                                            background: rgb(255, 237, 0);
+                                                                                                                            border-radius: 15px;
+                                                                                                                            border: 1px transparent;
+                                                                                                                            margin: auto 10px;
+                                                                                                                            width: 111px;
+                                                                                                                            font-weight: 640;
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+
+                                                                                                .loginbtn {
+                                                                                                    position: relative !important;
+                                                                                                    top: -41px;
+                                                                                                    left: 77px;
+                                                                                                    color: rgb(22, 66, 145) !important;
+                                                                                                }
+
+                                                                                                @media only screen and (max-width: 768px) {
+                                                                                                    .b-login-logo {
+                                                                                                        display: none;
+                                                                                                    }
+                                                                                                    .b-login-card-content {
+                                                                                                        margin: 20px auto;
+                                                                                                    }
+                                                                                                    .b-login-card {
+                                                                                                        height: 100%;
+                                                                                                        width: 359px;
+                                                                                                        background: rgb(22, 66, 145);
+                                                                                                    }
+                                                                                                    .content-from {
+                                                                                                        margin-bottom: -17px;
+                                                                                                    }
+                                                                                                    .form-check {
+                                                                                                        text-align: left;
+                                                                                                        padding-left: 77px;
+                                                                                                    }
+                                                                                                    .b-login-card-logo {
+                                                                                                        img {
+                                                                                                            width: 100%;
+                                                                                                        }
+                                                                                                    }
+                                                                                                    .b-login-bg {
+                                                                                                        display: none;
+                                                                                                    }
+                                                                                                    .b-login-header {
+                                                                                                        padding-left: 35px;
+                                                                                                    }
+                                                                                                    .b-login-card {
+                                                                                                        padding-left: 80px;
+                                                                                                    }
+                                                                                                    .b-login-bg-movil {
+                                                                                                        width: 140%;
+                                                                                                        left: 0;
+                                                                                                        top: 0;
+                                                                                                        background-color: rgb(22, 66, 145);
+                                                                                                        height: 100%;
+                                                                                                        position: absolute;
+                                                                                                        z-index: -1;
+                                                                                                    }
+                                                                                                }
+
+                                                                                                @media only screen and (min-width: 600px) {
+                                                                                                    .b-login-card-logo {
+                                                                                                        img {
+                                                                                                            width: 52%;
+                                                                                                        }
+                                                                                                    }
+                                                                                                    .b-login-logo {
+                                                                                                        width: 145px;
+                                                                                                        height: 72px;
+                                                                                                    }
+                                                                                                    .b-login-card {
+                                                                                                        height: 100%;
+                                                                                                    }
+                                                                                                    .content-from {
+                                                                                                        margin-bottom: -17px;
+                                                                                                    }
+                                                                                                    .form-check {
+                                                                                                        text-align: left;
+                                                                                                        padding-left: 47px;
+                                                                                                    }
+                                                                                                }
+
+                                                                                                @media only screen and (min-width: 992px) {
+                                                                                                    .b-login-card-logo {
+                                                                                                        img {
+                                                                                                            width: 52%;
+                                                                                                        }
+                                                                                                    }
+                                                                                                    .b-login-logo {
+                                                                                                        width: 145px;
+                                                                                                        height: 72px;
+                                                                                                    }
+                                                                                                    .b-login-card-content {
+                                                                                                        margin: 12px auto;
+                                                                                                    }
+                                                                                                    .b-login-card {
+                                                                                                        height: 298px;
+                                                                                                    }
+                                                                                                }
+
+                                                                                                @media only screen and (min-width: 1200px) {
+                                                                                                    .b-login-card-content {
+                                                                                                        margin: 20px auto;
+                                                                                                    }
+                                                                                                    .b-login-logo {
+                                                                                                        width: 170px;
+                                                                                                        height: 90px;
+                                                                                                    }
+                                                                                                    .b-login-card {
+                                                                                                        background: transparent;
+                                                                                                        height: 100%;
+                                                                                                    }
+                                                                                                    .form-check {
+                                                                                                        text-align: left;
+                                                                                                        padding-left: 47px;
+                                                                                                    }
+                                                                                                    .b-login-card-logo {
+                                                                                                        img {
+                                                                                                            width: 100%;
+                                                                                                        }
+                                                                                                    }
+                                                                                                }

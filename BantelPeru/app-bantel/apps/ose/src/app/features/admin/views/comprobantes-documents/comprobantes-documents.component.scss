@@ -1,0 +1,170 @@
+.descargaComprobante {
+  color: blue;
+  background-color: rgb(255, 255, 0);
+  text-align: center;
+  border-radius: 15px;
+  padding: 9px;
+}
+.statusPendiente {
+  color: white;
+  background-color: rgb(247, 56, 65);
+  text-align: center;
+  border-radius: 15px;
+  padding: 9px;
+}
+
+.statusSuspendido {
+  color: white;
+  background-color: rgb(234, 140, 48);
+  text-align: center;
+  border-radius: 15px;
+  padding: 9px;
+}
+
+.statusExonerado {
+  color: white;
+  background-color: rgb(94, 94, 80);
+  text-align: center;
+  border-radius: 15px;
+  padding: 9px;
+}
+
+.statusCanceldao {
+  color: white;
+  background-color: rgb(39, 92, 12);
+  text-align: center;
+  border-radius: 15px;
+  padding: 9px;
+}
+
+.row-custom {
+  text-align: center;
+}
+
+.header-table {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.2s;
+  animation-name: zoom;
+  animation-duration: 0.2s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.banish {
+  display: none;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 560px) {
+  .modal-content {
+    width: 100%;
+  }
+
+  .row-custom {
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .header-table {
+    display: block;
+    font-weight: 700;
+    padding-right: 20px;
+  }
+
+  .header-table-none {
+    display: none;
+  }
+
+  .descargaComprobante {
+    padding: 9px 12px 9px 12px;
+  }
+
+  .statusPendiente {
+    padding: 9px 12px 9px 12px;
+    ;
+  }
+
+  .statusSuspendido {
+    padding: 9px 12px 9px 12px;
+    ;
+  }
+
+  .statusExonerado {
+    padding: 9px 12px 9px 12px;
+    ;
+  }
+
+  .statusCanceldao {
+    padding: 9px 12px 9px 12px;
+    ;
+  }
+}
+
+
+//.material-icons.color_green { color: #00FF00; }
+.material-icons.color_green {
+  color: #0fc61b;
+}
+
+.material-icons.color_blue {
+  color: blue;
+}

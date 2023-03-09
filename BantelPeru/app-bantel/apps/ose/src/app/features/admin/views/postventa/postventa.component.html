@@ -1,0 +1,68 @@
+
+<p-messages></p-messages>
+<div class="p-grid">
+    <div class="p-col">
+        <div class="box"></div>
+    </div>
+    <div class="p-col">
+      <!--<div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-7">
+          <label for="titular">Titular del Servicio</label>
+          <input id="titular" type="text" pInputText [(ngModel)]="nombres">
+      </div>
+      <div class="p-field p-col-12 p-md-3">
+          <label for="doc">N° Documento</label>
+          <input id="doc" type="text" pInputText [(ngModel)]="dni">
+      </div>
+
+      <div class="p-field p-col-12 p-md-4">
+          <label for="telefono">Telefono</label>
+          <input id="telefono" type="text" pInputText [(ngModel)]="telefono">
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+          <label for="correo">Correo electronico</label>
+          <input id="correo" type="text" pInputText [(ngModel)]="email">
+      </div>
+  </div>-->
+      <div class="p-fluid p-formgrid p-grid">
+        <label>Contrato</label>
+        <div class="p-field p-col-12 p-md-12">
+        </div>
+        <div class="p-field p-col-12 p-md-12">
+          <p-dropdown [options]="contratos" [(ngModel)]="selectedContrato" [editable]="false" optionLabel="NombreServicio" placeholder="Seleccione"></p-dropdown>
+        </div>
+      </div>
+      <div class="p-field-radioButton p-col-12 p-md-12">
+        <label>Tipo de Servicio</label>
+      </div>
+      <div *ngFor="let category of categories" class="p-field-radioButton p-col-12 p-md-12">
+        <p-radioButton [inputId]="category.IDCategoriaTicket" name="category" [value]="category" [(ngModel)]="selectedCategory"></p-radioButton>
+        <label [for]="category.IDCategoriaTicket"> {{category.DescripcionCategoriaTicket}}</label>
+      </div>
+      <div class="p-field p-col-12 p-md-12">
+      </div>
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-12">
+          <label for="detalle">Por favor detalle su solicitud</label>
+          <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" [(ngModel)]="cuerpo" placeholder="Ingresar detalle" maxlength="200"></textarea>
+        </div>
+      </div>
+      <button pButton type="button" label="Solicitar" (click)="getSelected()"></button>
+    </div>
+      <div class="p-col">
+
+      </div>
+    </div>
+
+<p-dialog header="Mensaje" [(visible)]="addMensaje" [style]="{width: '500px'}">
+  <p *ngIf="flag == 1"><i class="pi pi-check" style="font-size: 2rem; color: #4caf50; font-weight: bold"></i> &nbsp;&nbsp;&nbsp;
+    <span class="tamanio-letra-mensaje">{{ mensaje }}</span>
+  </p>
+  <p *ngIf="flag == 2"><i class="pi pi-info" style="font-size: 2rem; color: #2196f3; font-weight: bold"></i> &nbsp;&nbsp;&nbsp;
+    <span class="tamanio-letra-mensaje">{{ mensaje }}</span>
+  </p>
+  <ng-template pTemplate="footer">
+    <p-button (click)="hideMensaje()" label="Aceptar"></p-button>
+  </ng-template>
+</p-dialog>
+

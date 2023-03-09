@@ -1,0 +1,54 @@
+{
+    "data": [
+    {
+      "id": "28382-1010",
+      "name": "100 Mbps Internet full",
+      "amountBilled": 119,
+      "dateEmit": "2020-11-13",
+      "dateDue": "2020-11-28",
+      "period": "Noviembre 2020",
+      "status": "Pendiente",
+      "bill_url": "https://www.sunat.gob.pe/legislacion/superin/2020/193-2020.pdf"
+    },
+    {
+      "id": "28382-1011",
+      "name": "100 Mbps Internet full",
+      "amountBilled": 119,
+      "dateEmit": "2020-12-13",
+      "dateDue": "2020-12-28",
+      "period": "Diciembre 2020",
+      "status": "Pendiente",
+      "bill_url": "https://www.sunat.gob.pe/legislacion/superin/2020/193-2020.pdf"
+    },
+    {
+      "id": "28382-1012",
+      "name": "100 Mbps Internet full",
+      "amountBilled": 119,
+      "dateEmit": "2021-01-13",
+      "dateDue": "2021-01-28",
+      "period": "Enero 2021",
+      "status": "Pendiente",
+      "bill_url": "https://www.sunat.gob.pe/legislacion/superin/2020/193-2020.pdf"
+    },
+    {
+      "id": "28382-1013",
+      "name": "100 Mbps Internet full",
+      "amountBilled": 119,
+      "dateEmit": "2021-02-13",
+      "dateDue": "2021-02-28",
+      "period": "Febrero 2021",
+      "status": "Pendiente",
+      "bill_url": "https://www.sunat.gob.pe/legislacion/superin/2020/193-2020.pdf"
+    },
+    {
+      "id": "28382-1014",
+      "name": "100 Mbps Internet full",
+      "amountBilled": 119,
+      "dateEmit": "2021-03-13",
+      "dateDue": "2021-03-28",
+      "period": "Marzo 2021",
+      "status": "Pendiente",
+      "bill_url": "https://www.sunat.gob.pe/legislacion/superin/2020/193-2020.pdf"
+    }
+  ]
+}

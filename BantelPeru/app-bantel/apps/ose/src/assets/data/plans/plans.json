@@ -1,0 +1,99 @@
+{
+    "data": [{
+            "id": "1000",
+            "code": "f230fh0g3",
+            "title": "30 Mbps",
+            "subtitle": "Internet full",
+            "price": 55,
+            "benefits": [{
+                    "title": "Internet FULL Vía Fibra Óptica",
+                    "icon": "icn_wifi.png"
+                },
+                {
+                    "title": "Instalación con el 50% de descuento",
+                    "icon": "icn_instalacion.png"
+                },
+                {
+                    "title": "Plan Hogar y Condominio",
+                    "icon": "icn_hogar.png"
+                }
+            ]
+        },
+        {
+            "id": "1001",
+            "code": "nvklal433",
+            "title": "100 Mbps",
+            "subtitle": "Internet full",
+            "price": 89,
+            "benefits": [{
+                    "title": "Internet FULL Vía Fibra Óptica",
+                    "icon": "icn_wifi.png"
+                },
+                {
+                    "title": "Instalación con el 50% de descuento",
+                    "icon": "icn_instalacion.png"
+                },
+                {
+                    "title": "Plan Hogar y Condominio",
+                    "icon": "icn_hogar.png"
+                }
+            ]
+        },
+        {
+            "id": "1002",
+            "code": "zz21cz3c1",
+            "title": "30 Mbps",
+            "subtitle": "Internet full + TV cable",
+            "price": 129,
+            "benefits": [{
+                    "title": "Internet FULL Vía Fibra Óptica",
+                    "icon": "icn_wifi.png"
+                },
+                {
+                    "title": "Instalación con el 50% de descuento",
+                    "icon": "icn_instalacion.png"
+                },
+                {
+                    "title": "Canales HD",
+                    "icon": "icn_canales_hd.png"
+                },
+                {
+                    "title": "Cable para 2 TV",
+                    "icon": "icn_tv.png"
+                },
+                {
+                    "title": "Plan Hogar y Condominio",
+                    "icon": "icn_hogar.png"
+                }
+            ]
+        },
+        {
+            "id": "1003",
+            "code": "244wgerg2",
+            "title": "100 Mbps",
+            "subtitle": "Internet full + TV cable",
+            "price": 167,
+            "benefits": [{
+                    "title": "Internet FULL Vía Fibra Óptica",
+                    "icon": "icn_wifi.png"
+                },
+                {
+                    "title": "Instalación con el 50% de descuento",
+                    "icon": "icn_instalacion.png"
+                },
+                {
+                    "title": "Canales HD",
+                    "icon": "icn_canales_hd.png"
+                },
+                {
+                    "title": "Cable para 2 TV",
+                    "icon": "icn_tv.png"
+                },
+                {
+                    "title": "Plan Hogar y Condominio",
+                    "icon": "icn_hogar.png"
+                }
+            ]
+        }
+    ]
+}

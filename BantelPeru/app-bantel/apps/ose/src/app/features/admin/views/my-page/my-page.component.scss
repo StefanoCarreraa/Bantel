@@ -1,0 +1,38 @@
+:host {
+  ::ng-deep .e-mypage {
+    max-width: 80%;
+    margin: 50px auto;
+    min-height: 1020px;
+
+    @media only screen and (min-width: 768px) {
+      max-width: 50%;
+    }
+
+    &-title {
+    }
+
+    &-container {
+      &-photo {
+        margin: auto;
+      }
+      fieldset {
+        margin: 20px 0px;
+
+        .p-avatar {
+          width: 6rem;
+          height: 6rem;
+        }
+      }
+
+      .e-fieldset-information {
+        .p-fieldset-content {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+.p-button-info-bantel{
+  background-color: #10286f;
+  border: #10286f;
+}
